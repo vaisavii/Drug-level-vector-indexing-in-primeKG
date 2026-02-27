@@ -12,6 +12,8 @@ The goal is to combine:
 
 By attaching embeddings directly to graph nodes and indexing them using Neo4j’s native vector index (cosine similarity), the system enables hybrid graph–vector workflows where similarity retrieval can be combined with Cypher-based graph traversal.
 
+This work was conducted as part of my research internship at the Institute of Biomedicine, University of Eastern Finland.
+
 ---
 
 ## Why this matters
@@ -22,8 +24,6 @@ Integrating embeddings directly into Neo4j enables:
 
 - Retrieval of pharmacologically similar drugs via vector search  
 - Joint exploration of similarity and biological topology  
-- Embedding-based clustering and structural analysis of drug space  
-
 Because vector search is integrated into Cypher, similarity queries can be combined directly with graph traversal without moving data between systems.
 
 ---
