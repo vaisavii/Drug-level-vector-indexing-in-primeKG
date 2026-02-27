@@ -62,7 +62,7 @@ OPTIONS {
     `vector.similarity_function`: 'cosine'
   }
 };
-
+```
 ---
 
 ## System Architecture
