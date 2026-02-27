@@ -62,3 +62,24 @@ OPTIONS {
     `vector.similarity_function`: 'cosine'
   }
 };
+
+---
+
+## System Architecture
+
+The integration consists of two phases:
+
+### Phase 1 – Embedding Alignment
+- Load pretrained BioBRIDGE drug embeddings
+- Align embeddings with PrimeKG using `node_index`
+- Merge with drug metadata
+- Produce `drug_emb_df.pkl`
+
+### Phase 2 – Neo4j Vector Integration
+- Pre-check mapping consistency between embeddings and Neo4j nodes
+- Batch upload embeddings to Neo4j
+- Attach embedding properties:
+    - `biobridge_emb`
+    - `biobridge_dim`
+    - `has_biobridge_emb`
+- Enable vector similarity search via native Neo4j HNSW index
